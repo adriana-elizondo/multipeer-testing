@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 class WhiteBoardViewController: UIViewController{
-    var lastPoint = CGPoint.zero
-    var color = UIColor.black
-    var brushWidth: CGFloat = 10.0
-    var opacity: CGFloat = 1.0
-    var swiped = false
-    var newStroke: Stroke?
-    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
+    
+    var lastPoint = CGPoint.zero
+    var swiped = false
+    var color = UIColor.black
+    var brushWidth: CGFloat = 10.0
+
+    var newStroke: Stroke?
+    var drawingHelper = DrawingHelper()
     
     override func viewDidLoad() {
         Connector.sharedInstance.drawingDelegate = self
@@ -35,7 +36,8 @@ class WhiteBoardViewController: UIViewController{
         guard let touch = touches.first else {return}
         swiped = true
         let currentPoint = touch.location(in: view)
-        drawLine(from: lastPoint, to: currentPoint, with: brushWidth, and: color.cgColor)
+        
+        drawingHelper.drawLine(from: lastPoint, to: currentPoint, withBrushWidth: brushWidth, andColor: color.cgColor, inView: view, andImage: tempImageView, finalImage: mainImageView)
         
         lastPoint = currentPoint
         newStroke?.lastPoint = currentPoint
@@ -48,47 +50,11 @@ class WhiteBoardViewController: UIViewController{
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !swiped {
-            drawLine(from: lastPoint, to: lastPoint, with: brushWidth, and: color.cgColor)
+            drawingHelper.drawLine(from: lastPoint, to: lastPoint, withBrushWidth: brushWidth, andColor: color.cgColor, inView: view, andImage: tempImageView, finalImage: mainImageView)
         }
         
-        mergeImages()
+        drawingHelper.mergeImages(with: mainImageView, temporary: tempImageView, in: view.frame)
         newStroke = nil
-    }
-    
-    private func mergeImages(){
-        UIGraphicsBeginImageContext(mainImageView.frame.size)
-        mainImageView.image?.draw(in: view.frame, blendMode: .normal, alpha: 1.0)
-        tempImageView?.image?.draw(in: view.frame, blendMode: .normal, alpha: opacity)
-        mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        tempImageView.image = nil
-    }
-    
-    private func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint, with brushWidth: CGFloat, and color: CGColor){
-        DispatchQueue.main.async {
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        
-        self.tempImageView.image?.draw(in: self.view.bounds)
-        context.move(to: fromPoint)
-        context.addLine(to: toPoint)
-        
-        context.setLineCap(.round)
-        context.setBlendMode(.normal)
-        context.setLineWidth(brushWidth)
-        context.setStrokeColor(color)
-        
-        context.strokePath()
-            
-        self.tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        self.tempImageView.alpha = self.opacity
-        UIGraphicsEndImageContext()
-        
-        self.mergeImages()
-        }
     }
 }
 
@@ -101,12 +67,8 @@ extension WhiteBoardViewController: DrawingDelegate{
     }
     
     func drawLine(with stroke: Stroke){
-        DispatchQueue.main.async {
-            let originView = UIView(frame: stroke.bounds)
-            let originPoint = self.view.convert(stroke.originPoint, from: originView)
-            let destinationPoint = self.view.convert(stroke.lastPoint, from: originView)
-            self.drawLine(from: originPoint, to: destinationPoint, with: stroke.brushWidth, and: stroke.color.cgColor)
-            self.lastPoint = destinationPoint
-        }
+        let points = drawingHelper.convertPoints(fromStroke: stroke, to: view.bounds)
+        drawingHelper.drawLine(from: points.originPoint, to: points.destinationPoint, withBrushWidth: brushWidth, andColor: color.cgColor, inView: view, andImage: tempImageView, finalImage: mainImageView)
+        lastPoint = points.destinationPoint
     }
 }

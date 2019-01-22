@@ -21,6 +21,7 @@
 		2636EAA121F1AF4700ABE598 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAA021F1AF4700ABE598 /* Extensions.swift */; };
 		2636EAA421F1C4F600ABE598 /* WhiteBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAA321F1C4F600ABE598 /* WhiteBoardViewController.swift */; };
 		2636EAA721F1CC9F00ABE598 /* EditRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAA621F1CC9F00ABE598 /* EditRecord.swift */; };
+		2636EAB121F5B4DC00ABE598 /* DrawingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2636EAA021F1AF4700ABE598 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2636EAA321F1C4F600ABE598 /* WhiteBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBoardViewController.swift; sourceTree = "<group>"; };
 		2636EAA621F1CC9F00ABE598 /* EditRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecord.swift; sourceTree = "<group>"; };
+		2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		2636EA6721F16B3000ABE598 /* MultipeerTesting */ = {
 			isa = PBXGroup;
 			children = (
+				2636EAAF21F5B4CE00ABE598 /* Helpers */,
 				2636EAA521F1CC8300ABE598 /* Sendable Data */,
 				2636EAA221F1C4E200ABE598 /* ViewController */,
 				2636EA9F21F1AF3800ABE598 /* Extensions */,
@@ -176,6 +179,14 @@
 				2636EAA621F1CC9F00ABE598 /* EditRecord.swift */,
 			);
 			path = "Sendable Data";
+			sourceTree = "<group>";
+		};
+		2636EAAF21F5B4CE00ABE598 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2636EAB121F5B4DC00ABE598 /* DrawingHelper.swift in Sources */,
 				2636EA9C21F1701300ABE598 /* Advertiser.swift in Sources */,
 				2636EAA721F1CC9F00ABE598 /* EditRecord.swift in Sources */,
 				2636EAA421F1C4F600ABE598 /* WhiteBoardViewController.swift in Sources */,
