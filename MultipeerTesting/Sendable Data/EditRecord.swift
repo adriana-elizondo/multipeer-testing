@@ -83,9 +83,29 @@ enum Edit<S: Codable> : Codable{
 }
 struct EditRecord : Codable{
     let edit : Edit<Stroke>
+    let logicalTimeStamp : Int64 = 0
+    let timeStamp : Int64 = 0
+    let collaboratorId = UIDevice.current.identifierForVendor
+    
+    static func <(lhs: EditRecord, rhs: EditRecord) -> Bool {
+        if lhs.logicalTimeStamp != rhs.logicalTimeStamp {
+            return lhs.logicalTimeStamp < rhs.logicalTimeStamp
+        }
+        else if lhs.timeStamp != rhs.timeStamp {
+            return lhs.timeStamp < rhs.timeStamp
+        }
+        
+        //Shouldnt get here
+        return false
+    }
 }
 
 struct RecordParser{
+    static func editToDraw(with records: inout ([EditRecord])) -> EditRecord?{
+        records = records.sorted(by: {$0 < $1})
+        return records.popLast()
+    }
+    
     static func dataToEditRecord(data: Data) -> EditRecord?{
         let decoder = JSONDecoder()
         let result = try! decoder.decode(EditRecord.self, from: data)

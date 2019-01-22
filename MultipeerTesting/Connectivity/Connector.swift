@@ -38,6 +38,7 @@ class Connector: NSObject{
     typealias InvitationHandler = (handler: (Bool, MCSession?) -> Void, peerName: String)
     private var currentPeers = [MCPeerID]()
     private var invitationRequests : Array = [InvitationHandler]()
+    private var currentEdits = [EditRecord]()
     
     override init() {
         super.init()
@@ -55,7 +56,15 @@ class Connector: NSObject{
     }
     
     func sendEditRecord(editRecord: EditRecord){
+        currentEdits.append(editRecord)
+        drawLatestEdit()
         sessionManager?.sendDataToPeers(data: RecordParser.recordToData(editRecord: editRecord))
+    }
+    
+    func drawLatestEdit(){
+        if let latestEdit = RecordParser.editToDraw(with: &currentEdits){
+            drawingDelegate?.didReceiveNewEdit(with: latestEdit)
+        }
     }
 }
 
@@ -108,7 +117,8 @@ extension Connector: MCSessionDelegate{
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let record = RecordParser.dataToEditRecord(data: data){
-            drawingDelegate?.didReceiveNewEdit(with: record)
+            currentEdits.append(record)
+            drawLatestEdit()
         }
     }
     

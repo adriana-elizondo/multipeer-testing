@@ -18,16 +18,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         connector.delegate = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
 
 extension ViewController: ConnectorDelegate{
     func didUpdatePeers(with newPeers: [String]) {
         peers = newPeers
-        print("I found \(peers)")
         tableView.reloadData()
     }
     

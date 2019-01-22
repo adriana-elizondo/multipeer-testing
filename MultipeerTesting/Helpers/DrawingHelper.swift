@@ -11,8 +11,6 @@ import UIKit
 
 class DrawingHelper{
     var newStroke: Stroke?
-    
-  
     func drawLine(from fromPoint: CGPoint,
                   to toPoint: CGPoint,
                   withBrushWidth brushWidth: CGFloat,

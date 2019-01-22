@@ -36,9 +36,7 @@ class WhiteBoardViewController: UIViewController{
         guard let touch = touches.first else {return}
         swiped = true
         let currentPoint = touch.location(in: view)
-        
-        drawingHelper.drawLine(from: lastPoint, to: currentPoint, withBrushWidth: brushWidth, andColor: color.cgColor, inView: view, andImage: tempImageView, finalImage: mainImageView)
-        
+    
         lastPoint = currentPoint
         newStroke?.lastPoint = currentPoint
         
@@ -46,15 +44,6 @@ class WhiteBoardViewController: UIViewController{
         let editRecord = EditRecord(edit: Edit.addStroke(newStroke!))
         Connector.sharedInstance.sendEditRecord(editRecord: editRecord)
         newStroke?.originPoint = currentPoint
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !swiped {
-            drawingHelper.drawLine(from: lastPoint, to: lastPoint, withBrushWidth: brushWidth, andColor: color.cgColor, inView: view, andImage: tempImageView, finalImage: mainImageView)
-        }
-        
-        drawingHelper.mergeImages(with: mainImageView, temporary: tempImageView, in: view.frame)
-        newStroke = nil
     }
 }
 
