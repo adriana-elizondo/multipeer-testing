@@ -9,6 +9,8 @@
 import Foundation
 import MultipeerConnectivity
 
+typealias InvitationHandler = (handler: (Bool, MCSession?) -> Void, peerName: String)
+
 protocol ConnectorDelegate: class{
     func didUpdatePeers(with newPeers: [String])
     func didReceiveInvitation(from peer: String, with handler: @escaping (Bool) -> Void)
@@ -35,7 +37,6 @@ class Connector: NSObject{
     weak var delegate: ConnectorDelegate?
     weak var drawingDelegate: DrawingDelegate?
     
-    typealias InvitationHandler = (handler: (Bool, MCSession?) -> Void, peerName: String)
     private var currentPeers = [MCPeerID]()
     private var invitationRequests : Array = [InvitationHandler]()
     private var currentEdits = [EditRecord]()

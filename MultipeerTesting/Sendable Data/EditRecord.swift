@@ -84,7 +84,7 @@ enum Edit<S: Codable> : Codable{
 struct EditRecord : Codable{
     let edit : Edit<Stroke>
     let logicalTimeStamp : Int64 = 0
-    let timeStamp : Int64 = 0
+    let timeStamp : Int64 = Int64(Date().timeIntervalSince1970)
     let collaboratorId = UIDevice.current.identifierForVendor
     
     static func <(lhs: EditRecord, rhs: EditRecord) -> Bool {

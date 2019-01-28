@@ -5,8 +5,8 @@
 //  Created by Adriana Elizondo on 2019/1/18.
 //  Copyright © 2019 EF. All rights reserved.
 //
-
 import Foundation
+import UIKit
 
 extension Array{
     mutating func findAndRemoveElement(matching: @escaping (Element) -> Bool) -> Element?{
@@ -18,5 +18,16 @@ extension Array{
         }
         
         return nil
+    }
+}
+
+extension UIViewController{
+    convenience init(nibName: String?) {
+        guard nibName != nil else {
+            self.init(nibName: String(describing: type(of: self)), bundle: nil)
+            return
+        }
+        
+        self.init(nibName: nibName, bundle: nil)
     }
 }

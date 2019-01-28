@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2636EA6921F16B3000ABE598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EA6821F16B3000ABE598 /* AppDelegate.swift */; };
-		2636EA6B21F16B3000ABE598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EA6A21F16B3000ABE598 /* ViewController.swift */; };
+		2636EA6B21F16B3000ABE598 /* DisplayPeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EA6A21F16B3000ABE598 /* DisplayPeersViewController.swift */; };
 		2636EA6E21F16B3000ABE598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2636EA6C21F16B3000ABE598 /* Main.storyboard */; };
 		2636EA7021F16B3200ABE598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2636EA6F21F16B3200ABE598 /* Assets.xcassets */; };
 		2636EA7321F16B3200ABE598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2636EA7121F16B3200ABE598 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,13 @@
 		2636EAA421F1C4F600ABE598 /* WhiteBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAA321F1C4F600ABE598 /* WhiteBoardViewController.swift */; };
 		2636EAA721F1CC9F00ABE598 /* EditRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAA621F1CC9F00ABE598 /* EditRecord.swift */; };
 		2636EAB121F5B4DC00ABE598 /* DrawingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */; };
+		265788B521FEA88F005240C1 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265788B421FEA88F005240C1 /* Peer.swift */; };
+		265788B721FEA928005240C1 /* DisplayPeersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265788B621FEA928005240C1 /* DisplayPeersRouter.swift */; };
+		265788B921FEA94F005240C1 /* DisplayPeersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265788B821FEA94F005240C1 /* DisplayPeersPresenter.swift */; };
+		265788BB21FEAA92005240C1 /* DisplayPeersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265788BA21FEAA92005240C1 /* DisplayPeersInteractor.swift */; };
+		265788BD21FEAB23005240C1 /* DisplayPeersModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265788BC21FEAB23005240C1 /* DisplayPeersModels.swift */; };
+		265788C121FEF33D005240C1 /* WhiteBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265788C021FEF33D005240C1 /* WhiteBoardViewController.xib */; };
+		26A0FB8121FEA74D00328398 /* DisplayPeersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A0FB8021FEA74D00328398 /* DisplayPeersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +51,7 @@
 /* Begin PBXFileReference section */
 		2636EA6521F16B3000ABE598 /* MultipeerTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2636EA6821F16B3000ABE598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2636EA6A21F16B3000ABE598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2636EA6A21F16B3000ABE598 /* DisplayPeersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPeersViewController.swift; sourceTree = "<group>"; };
 		2636EA6D21F16B3000ABE598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2636EA6F21F16B3200ABE598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2636EA7221F16B3200ABE598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +70,13 @@
 		2636EAA321F1C4F600ABE598 /* WhiteBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteBoardViewController.swift; sourceTree = "<group>"; };
 		2636EAA621F1CC9F00ABE598 /* EditRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecord.swift; sourceTree = "<group>"; };
 		2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingHelper.swift; sourceTree = "<group>"; };
+		265788B421FEA88F005240C1 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		265788B621FEA928005240C1 /* DisplayPeersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPeersRouter.swift; sourceTree = "<group>"; };
+		265788B821FEA94F005240C1 /* DisplayPeersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPeersPresenter.swift; sourceTree = "<group>"; };
+		265788BA21FEAA92005240C1 /* DisplayPeersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPeersInteractor.swift; sourceTree = "<group>"; };
+		265788BC21FEAB23005240C1 /* DisplayPeersModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPeersModels.swift; sourceTree = "<group>"; };
+		265788C021FEF33D005240C1 /* WhiteBoardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhiteBoardViewController.xib; sourceTree = "<group>"; };
+		26A0FB8021FEA74D00328398 /* DisplayPeersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayPeersViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,13 +127,13 @@
 		2636EA6721F16B3000ABE598 /* MultipeerTesting */ = {
 			isa = PBXGroup;
 			children = (
+				265788B321FEA876005240C1 /* Models */,
+				26A0FB7F21FEA6B400328398 /* Display Peers */,
 				2636EAAF21F5B4CE00ABE598 /* Helpers */,
 				2636EAA521F1CC8300ABE598 /* Sendable Data */,
-				2636EAA221F1C4E200ABE598 /* ViewController */,
+				2636EAA221F1C4E200ABE598 /* Drawing Board */,
 				2636EA9F21F1AF3800ABE598 /* Extensions */,
-				2636EA9621F16B6500ABE598 /* Connectivity */,
 				2636EA6821F16B3000ABE598 /* AppDelegate.swift */,
-				2636EA6A21F16B3000ABE598 /* ViewController.swift */,
 				2636EA6C21F16B3000ABE598 /* Main.storyboard */,
 				2636EA6F21F16B3200ABE598 /* Assets.xcassets */,
 				2636EA7121F16B3200ABE598 /* LaunchScreen.storyboard */,
@@ -146,7 +160,7 @@
 			path = MultipeerTestingUITests;
 			sourceTree = "<group>";
 		};
-		2636EA9621F16B6500ABE598 /* Connectivity */ = {
+		2636EA9621F16B6500ABE598 /* Connectivity Workers */ = {
 			isa = PBXGroup;
 			children = (
 				2636EA9721F16B9100ABE598 /* Connector.swift */,
@@ -154,7 +168,7 @@
 				2636EA9B21F1701300ABE598 /* Advertiser.swift */,
 				2636EA9D21F1708A00ABE598 /* Browser.swift */,
 			);
-			path = Connectivity;
+			path = "Connectivity Workers";
 			sourceTree = "<group>";
 		};
 		2636EA9F21F1AF3800ABE598 /* Extensions */ = {
@@ -165,12 +179,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2636EAA221F1C4E200ABE598 /* ViewController */ = {
+		2636EAA221F1C4E200ABE598 /* Drawing Board */ = {
 			isa = PBXGroup;
 			children = (
 				2636EAA321F1C4F600ABE598 /* WhiteBoardViewController.swift */,
+				265788C021FEF33D005240C1 /* WhiteBoardViewController.xib */,
 			);
-			path = ViewController;
+			path = "Drawing Board";
 			sourceTree = "<group>";
 		};
 		2636EAA521F1CC8300ABE598 /* Sendable Data */ = {
@@ -187,6 +202,28 @@
 				2636EAB021F5B4DC00ABE598 /* DrawingHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		265788B321FEA876005240C1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				265788B421FEA88F005240C1 /* Peer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26A0FB7F21FEA6B400328398 /* Display Peers */ = {
+			isa = PBXGroup;
+			children = (
+				2636EA6A21F16B3000ABE598 /* DisplayPeersViewController.swift */,
+				26A0FB8021FEA74D00328398 /* DisplayPeersViewController.xib */,
+				265788B621FEA928005240C1 /* DisplayPeersRouter.swift */,
+				265788B821FEA94F005240C1 /* DisplayPeersPresenter.swift */,
+				265788BA21FEAA92005240C1 /* DisplayPeersInteractor.swift */,
+				265788BC21FEAB23005240C1 /* DisplayPeersModels.swift */,
+				2636EA9621F16B6500ABE598 /* Connectivity Workers */,
+			);
+			path = "Display Peers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +331,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2636EA7321F16B3200ABE598 /* LaunchScreen.storyboard in Resources */,
+				265788C121FEF33D005240C1 /* WhiteBoardViewController.xib in Resources */,
 				2636EA7021F16B3200ABE598 /* Assets.xcassets in Resources */,
 				2636EA6E21F16B3000ABE598 /* Main.storyboard in Resources */,
+				26A0FB8121FEA74D00328398 /* DisplayPeersViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,12 +360,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2636EAB121F5B4DC00ABE598 /* DrawingHelper.swift in Sources */,
+				265788BB21FEAA92005240C1 /* DisplayPeersInteractor.swift in Sources */,
+				265788B721FEA928005240C1 /* DisplayPeersRouter.swift in Sources */,
 				2636EA9C21F1701300ABE598 /* Advertiser.swift in Sources */,
 				2636EAA721F1CC9F00ABE598 /* EditRecord.swift in Sources */,
+				265788B521FEA88F005240C1 /* Peer.swift in Sources */,
 				2636EAA421F1C4F600ABE598 /* WhiteBoardViewController.swift in Sources */,
 				2636EA9821F16B9100ABE598 /* Connector.swift in Sources */,
+				265788B921FEA94F005240C1 /* DisplayPeersPresenter.swift in Sources */,
 				2636EA9E21F1708A00ABE598 /* Browser.swift in Sources */,
-				2636EA6B21F16B3000ABE598 /* ViewController.swift in Sources */,
+				2636EA6B21F16B3000ABE598 /* DisplayPeersViewController.swift in Sources */,
+				265788BD21FEAB23005240C1 /* DisplayPeersModels.swift in Sources */,
 				2636EA9A21F16F2000ABE598 /* SessionManager.swift in Sources */,
 				2636EA6921F16B3000ABE598 /* AppDelegate.swift in Sources */,
 				2636EAA121F1AF4700ABE598 /* Extensions.swift in Sources */,

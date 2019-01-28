@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WhiteBoardViewController" customModule="MultipeerTesting" customModuleProvider="target">
+            <connections>
+                <outlet property="mainImageView" destination="dpd-8Q-cpz" id="5QU-9M-TQo"/>
+                <outlet property="tempImageView" destination="6oK-Fb-0ip" id="FeK-A3-QF3"/>
+                <outlet property="view" destination="5Zl-ou-vFj" id="VBt-Wh-7c4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="5Zl-ou-vFj">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpd-8Q-cpz">
+                    <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-Fb-0ip">
+                    <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="6oK-Fb-0ip" firstAttribute="centerY" secondItem="dpd-8Q-cpz" secondAttribute="centerY" id="3Er-EU-PsP"/>
+                <constraint firstItem="dpd-8Q-cpz" firstAttribute="centerY" secondItem="AOa-2N-UPO" secondAttribute="centerY" id="Edd-MX-HSz"/>
+                <constraint firstItem="6oK-Fb-0ip" firstAttribute="width" secondItem="dpd-8Q-cpz" secondAttribute="width" id="Iup-f6-0sR"/>
+                <constraint firstItem="6oK-Fb-0ip" firstAttribute="height" secondItem="dpd-8Q-cpz" secondAttribute="height" id="NG8-jp-48v"/>
+                <constraint firstItem="dpd-8Q-cpz" firstAttribute="centerX" secondItem="AOa-2N-UPO" secondAttribute="centerX" id="Sxf-FI-t11"/>
+                <constraint firstItem="6oK-Fb-0ip" firstAttribute="centerX" secondItem="dpd-8Q-cpz" secondAttribute="centerX" id="hEo-Lr-rj5"/>
+                <constraint firstItem="dpd-8Q-cpz" firstAttribute="height" secondItem="5Zl-ou-vFj" secondAttribute="height" id="sFr-xI-cZS"/>
+                <constraint firstItem="dpd-8Q-cpz" firstAttribute="width" secondItem="5Zl-ou-vFj" secondAttribute="width" id="yo2-3M-KjX"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="AOa-2N-UPO"/>
+        </view>
+    </objects>
+</document>
